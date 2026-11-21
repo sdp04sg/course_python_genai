@@ -76,6 +76,246 @@ COURSES = [
         ],
     },
     {
+        "id": "dsa",
+        "title": "Data Structures and Algorithms with Python",
+        "subtitle": "Solve problems efficiently, from Big-O basics to dynamic programming.",
+        "level": "Beginner to advanced",
+        "modules": [
+            {
+                "title": "Thinking about efficiency",
+                "lessons": [
+                    {
+                        "id": "dsa-big-o",
+                        "title": "Measure and reason about Big-O complexity",
+                        "practice": "Time three ways to find duplicates in a list with timeit, then explain the Big-O of each.",
+                        "minutes": 35,
+                    },
+                    {
+                        "id": "dsa-builtins",
+                        "title": "Know the cost of lists, dicts, sets, and deques",
+                        "practice": "Benchmark membership tests and front insertions on a list, a set, and a deque, and explain the results.",
+                        "minutes": 35,
+                    },
+                ],
+            },
+            {
+                "title": "Linear data structures",
+                "lessons": [
+                    {
+                        "id": "dsa-arrays",
+                        "title": "Solve array problems with two pointers and sliding windows",
+                        "practice": "Find a pair with a target sum in a sorted list, then the longest substring without repeating characters.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "dsa-stacks-queues",
+                        "title": "Use stacks and queues",
+                        "practice": "Check balanced brackets with a stack, and simulate a print queue with collections.deque.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "dsa-linked-lists",
+                        "title": "Build and manipulate linked lists",
+                        "practice": "Implement a singly linked list with append, delete, and reverse, and write a test for each method.",
+                        "minutes": 50,
+                    },
+                ],
+            },
+            {
+                "title": "Recursion, searching, and sorting",
+                "lessons": [
+                    {
+                        "id": "dsa-recursion",
+                        "title": "Think recursively and backtrack",
+                        "practice": "Generate every subset and permutation of a small list, then place 4 queens on a 4x4 board.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "dsa-binary-search",
+                        "title": "Search sorted data with binary search",
+                        "practice": "Implement binary search, then find the first and last position of a value; test empty and one-item lists.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "dsa-sorting",
+                        "title": "Implement merge sort and quicksort",
+                        "practice": "Write both sorts, compare their speed with sorted() on 10,000 random numbers, and note which are stable.",
+                        "minutes": 55,
+                    },
+                ],
+            },
+            {
+                "title": "Hashing, trees, and heaps",
+                "lessons": [
+                    {
+                        "id": "dsa-hashing",
+                        "title": "Solve problems with hash maps and sets",
+                        "practice": "Solve two-sum, group anagrams, and find the first non-repeating character with dict and Counter.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "dsa-trees",
+                        "title": "Traverse binary trees and binary search trees",
+                        "practice": "Build a binary search tree with insert and search, then write in-order and level-order traversals.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "dsa-heaps",
+                        "title": "Use heaps and priority queues",
+                        "practice": "Keep the k largest numbers from a stream and merge k sorted lists with heapq.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+            {
+                "title": "Graphs",
+                "lessons": [
+                    {
+                        "id": "dsa-graph-traversal",
+                        "title": "Represent graphs and explore them with BFS and DFS",
+                        "practice": "Count the islands in a grid with DFS, then find the shortest path through a maze with BFS.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "dsa-shortest-paths",
+                        "title": "Find weighted shortest paths with Dijkstra's algorithm",
+                        "practice": "Compute the fastest travel time between cities from a weighted adjacency list using heapq.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "dsa-topo-union-find",
+                        "title": "Order tasks with topological sort and union-find",
+                        "practice": "Decide whether a set of course prerequisites can be completed, and detect cycles with union-find.",
+                        "minutes": 55,
+                    },
+                ],
+            },
+            {
+                "title": "Advanced problem solving",
+                "lessons": [
+                    {
+                        "id": "dsa-dynamic-programming",
+                        "title": "Solve problems with dynamic programming",
+                        "practice": "Solve coin change and longest common subsequence, first with memoization, then with a table.",
+                        "minutes": 60,
+                    },
+                    {
+                        "id": "dsa-greedy",
+                        "title": "Apply greedy algorithms and interval patterns",
+                        "practice": "Schedule the most non-overlapping meetings, merge overlapping intervals, and explain why greedy works.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "dsa-tries-practice",
+                        "title": "Build a trie and practice timed problem solving",
+                        "practice": "Build a trie-based autocomplete, then solve three mixed problems in 60 minutes and review their complexity.",
+                        "minutes": 75,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "python-advanced",
+        "title": "Advanced Python",
+        "subtitle": "Write idiomatic, typed, concurrent, production-ready Python.",
+        "level": "Advanced",
+        "modules": [
+            {
+                "title": "Functions and iteration in depth",
+                "lessons": [
+                    {
+                        "id": "pyadv-generators",
+                        "title": "Build lazy pipelines with iterators and generators",
+                        "practice": "Stream a large log file with generators, keep only error lines, and count them without loading the whole file.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "pyadv-decorators",
+                        "title": "Write decorators and closures",
+                        "practice": "Write @timer and @retry(times=3) decorators that keep the wrapped function's name with functools.wraps.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "pyadv-context-managers",
+                        "title": "Manage resources with context managers",
+                        "practice": "Write a timing context manager as a class and with contextlib, and check cleanup still runs after an exception.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Types and the data model",
+                "lessons": [
+                    {
+                        "id": "pyadv-typing",
+                        "title": "Use type hints, generics, and protocols with mypy",
+                        "practice": "Type the task-list project, define a Protocol for its storage, and make mypy --strict pass.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "pyadv-dataclasses",
+                        "title": "Model data with dataclasses and enums",
+                        "practice": "Rewrite the contact book with frozen dataclasses and an Enum for the contact type; compare equality and sorting.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "pyadv-data-model",
+                        "title": "Make classes feel built-in with special methods",
+                        "practice": "Build a Vector class that supports +, ==, len(), iteration, and a helpful repr.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+            {
+                "title": "Concurrency and performance",
+                "lessons": [
+                    {
+                        "id": "pyadv-asyncio",
+                        "title": "Run concurrent I/O with asyncio",
+                        "practice": "Fetch five URLs at once with httpx.AsyncClient and asyncio.gather, with a timeout on each request.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "pyadv-threads-processes",
+                        "title": "Choose threads or processes with concurrent.futures",
+                        "practice": "Compare thread and process pools on a download task and a number-crunching task, and explain the GIL's role.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "pyadv-performance",
+                        "title": "Profile and optimize slow code",
+                        "practice": "Profile a slow script with cProfile, speed up its slowest function, and cache a pure function with functools.cache.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+            {
+                "title": "Production-grade Python",
+                "lessons": [
+                    {
+                        "id": "pyadv-packaging",
+                        "title": "Package a project with pyproject.toml",
+                        "practice": "Make the task list an installable package with a command-line entry point, and install it in a fresh virtual environment.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "pyadv-testing",
+                        "title": "Test in depth with fixtures, parametrize, and mocks",
+                        "practice": "Test the task-list package with a temporary-file fixture, parametrized edge cases, and a mocked clock.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "pyadv-logging-errors",
+                        "title": "Design logging, configuration, and custom exceptions",
+                        "practice": "Add logging, settings from environment variables, and a small custom exception hierarchy to the task-list CLI.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+        ],
+    },
+    {
         "id": "fastapi",
         "title": "FastAPI in Practice",
         "subtitle": "Turn Python skills into tested web APIs.",
@@ -145,6 +385,128 @@ COURSES = [
                         "id": "fastapi-testing",
                         "title": "Test endpoints and prepare a deployment",
                         "practice": "Write API tests with a temporary database and document startup steps.",
+                        "minutes": 50,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "postgres",
+        "title": "PostgreSQL and SQL",
+        "subtitle": "Store, query and protect data with the leading open-source database.",
+        "level": "Beginner to advanced",
+        "modules": [
+            {
+                "title": "Getting started",
+                "lessons": [
+                    {
+                        "id": "pg-setup",
+                        "title": "Install PostgreSQL and connect with psql",
+                        "practice": "Start PostgreSQL (installer or Docker), connect with psql, create a database called learning and list its tables.",
+                        "minutes": 30,
+                    },
+                    {
+                        "id": "pg-tables",
+                        "title": "Create tables with the right types and constraints",
+                        "practice": "Create a students table with an identity primary key, a unique email and a CHECK on age, then try to insert invalid rows.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Querying data",
+                "lessons": [
+                    {
+                        "id": "pg-select",
+                        "title": "Query rows with SELECT, WHERE, ORDER BY and LIMIT",
+                        "practice": "Find the five newest students whose email ends in @example.com, sorted by signup date.",
+                        "minutes": 35,
+                    },
+                    {
+                        "id": "pg-modify",
+                        "title": "Insert, update and delete safely with RETURNING",
+                        "practice": "Insert three courses, raise one course's price by 10%, delete another, and return the changed rows each time.",
+                        "minutes": 35,
+                    },
+                    {
+                        "id": "pg-aggregate",
+                        "title": "Summarise data with GROUP BY and HAVING",
+                        "practice": "Count enrolments and average scores per course, and keep only courses with more than two students.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Relationships",
+                "lessons": [
+                    {
+                        "id": "pg-joins",
+                        "title": "Combine tables with joins",
+                        "practice": "List every student with their courses, including students who haven't enrolled in anything.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "pg-schema-design",
+                        "title": "Design a normalized schema with foreign keys",
+                        "practice": "Model students, courses and enrolments (many-to-many) with foreign keys and sensible ON DELETE rules.",
+                        "minutes": 50,
+                    },
+                ],
+            },
+            {
+                "title": "Advanced SQL",
+                "lessons": [
+                    {
+                        "id": "pg-ctes",
+                        "title": "Break down queries with subqueries and CTEs",
+                        "practice": "Find students who scored above their course's average with a CTE, then walk a category tree with WITH RECURSIVE.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "pg-window",
+                        "title": "Rank and compare rows with window functions",
+                        "practice": "Rank students within each course by score, keep the top three, and compute a running total of daily signups.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "pg-jsonb",
+                        "title": "Store flexible data with JSONB and arrays",
+                        "practice": "Store lesson metadata in a JSONB column, query a nested key and add a GIN index for containment queries.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+            {
+                "title": "Performance and reliability",
+                "lessons": [
+                    {
+                        "id": "pg-indexes",
+                        "title": "Speed up queries with indexes and EXPLAIN",
+                        "practice": "Load 100,000 rows, compare EXPLAIN ANALYZE before and after adding an index, and explain the difference.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "pg-transactions",
+                        "title": "Keep data correct with transactions and locking",
+                        "practice": "Transfer credits between two accounts in a transaction, then show that a failing statement leaves both balances unchanged.",
+                        "minutes": 50,
+                    },
+                ],
+            },
+            {
+                "title": "PostgreSQL in applications",
+                "lessons": [
+                    {
+                        "id": "pg-python",
+                        "title": "Use PostgreSQL from Python with psycopg",
+                        "practice": "Connect with psycopg 3, run parameterized queries and move the FastAPI tasks API from SQLite to PostgreSQL.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "pg-operations",
+                        "title": "Run PostgreSQL in production: roles, backups and migrations",
+                        "practice": "Create a least-privilege app role, back up with pg_dump, restore into a new database and write a migration.",
                         "minutes": 50,
                     },
                 ],
@@ -222,6 +584,111 @@ COURSES = [
                         "title": "Configure strict checks and build for production",
                         "practice": "Add a type-check command and fix all errors before creating a build.",
                         "minutes": 35,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "docker",
+        "title": "Docker for Developers",
+        "subtitle": "Package, run, and ship your apps in containers.",
+        "level": "Beginner to advanced",
+        "modules": [
+            {
+                "title": "Container fundamentals",
+                "lessons": [
+                    {
+                        "id": "docker-intro",
+                        "title": "Understand containers and install Docker",
+                        "practice": "Install Docker Desktop (with WSL 2 on Windows), run hello-world, and explain how a container differs from a VM.",
+                        "minutes": 30,
+                    },
+                    {
+                        "id": "docker-run",
+                        "title": "Run and manage containers",
+                        "practice": "Run nginx on port 8080, read its logs, open a shell in it with docker exec, then stop and remove it.",
+                        "minutes": 35,
+                    },
+                    {
+                        "id": "docker-images",
+                        "title": "Work with images, tags, and registries",
+                        "practice": "Pull two tags of the python image, compare their sizes, and inspect their layers with docker image history.",
+                        "minutes": 30,
+                    },
+                ],
+            },
+            {
+                "title": "Build your own images",
+                "lessons": [
+                    {
+                        "id": "docker-dockerfile",
+                        "title": "Write your first Dockerfile",
+                        "practice": "Containerize the number-guessing game with FROM, WORKDIR, COPY, and CMD, and play it with docker run -it.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "docker-layers",
+                        "title": "Speed up builds with layers, caching, and .dockerignore",
+                        "practice": "Reorder a Dockerfile so dependency installs are cached, add a .dockerignore, and measure the rebuild time.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Containerize a web app",
+                "lessons": [
+                    {
+                        "id": "docker-fastapi",
+                        "title": "Run a FastAPI app in a container",
+                        "practice": "Containerize your FastAPI project, configure it with environment variables, publish its port, and add a HEALTHCHECK.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "docker-volumes",
+                        "title": "Persist data with volumes and bind mounts",
+                        "practice": "Store the SQLite database in a named volume, recreate the container, and confirm the data survives.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Multi-container apps with Compose",
+                "lessons": [
+                    {
+                        "id": "docker-compose",
+                        "title": "Define multi-container apps with Docker Compose",
+                        "practice": "Write a compose.yaml that runs your API with PostgreSQL, connecting them by service name.",
+                        "minutes": 55,
+                    },
+                    {
+                        "id": "docker-compose-dev",
+                        "title": "Develop with Compose: health checks, networks, and live reload",
+                        "practice": "Make the API wait for a healthy database, and reload code changes with a bind mount or compose watch.",
+                        "minutes": 50,
+                    },
+                ],
+            },
+            {
+                "title": "Production-ready containers",
+                "lessons": [
+                    {
+                        "id": "docker-multistage",
+                        "title": "Build small, secure images with multi-stage builds",
+                        "practice": "Study this app's Dockerfile, then give your API a multi-stage build that runs as a non-root user; compare image sizes.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "docker-security",
+                        "title": "Handle secrets and scan images for vulnerabilities",
+                        "practice": "Move secrets out of the image into runtime settings, then scan it with docker scout and fix one finding.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "docker-ci-deploy",
+                        "title": "Build in CI, push to a registry, and deploy",
+                        "practice": "Build and push your image to GitHub Container Registry with GitHub Actions, then deploy it to a container host.",
+                        "minutes": 60,
                     },
                 ],
             },

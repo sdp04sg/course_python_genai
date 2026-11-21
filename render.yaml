@@ -17,9 +17,7 @@ services:
         sync: false
       - key: APP_DB_PATH
         value: /var/data/progress.sqlite3
-      - key: OPENAI_API_KEY
+      - key: ANTHROPIC_API_KEY
         sync: false
-      - key: OPENAI_MODEL
-        value: gpt-4o-mini
-      - key: OPENAI_BASE_URL
-        value: https://api.openai.com/v1
+      - key: ANTHROPIC_MODEL
+        value: claude-opus-5-5

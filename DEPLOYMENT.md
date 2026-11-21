@@ -24,7 +24,7 @@ You need:
 - **The code on GitHub:** [sdp04sg/course_python_genai](https://github.com/sdp04sg/course_python_genai).
 - **A Render account.** You can sign up with GitHub at [render.com](https://render.com).
 - **A long password** for the site. Use 16+ characters, such as four random words. Nothing limits repeated guesses, so the length is what keeps it safe.
-- **Optional:** an OpenAI API key (or a key for another OpenAI-compatible provider) to turn on the AI coach. Each chat message is billed to your provider account.
+- **Optional:** an Anthropic API key from the [Claude Console](https://platform.claude.com) to turn on the AI coach, which uses Claude. The Console account needs API credits (a Claude.ai subscription doesn't include API usage), and each chat message is billed to it.
 
 > **Cost:** the database needs a persistent disk, and Render only offers disks on **paid** instance types, so `render.yaml` uses the `starter` plan. Check [Render's pricing](https://render.com/pricing) before you continue. To try it for free, see [Run on the free plan](#run-on-the-free-plan); progress then resets on every deploy.
 
@@ -52,15 +52,16 @@ Render asks for the settings that aren't stored in `render.yaml`:
 | Setting | What to enter |
 | --- | --- |
 | `APP_PASSWORD` | Your long password. **Don't leave it empty**, or anyone with the link can use the site. |
-| `OPENAI_API_KEY` | Your provider key, or leave it empty to keep the AI coach off. |
+| `ANTHROPIC_API_KEY` | Your Anthropic API key, or leave it empty to keep the AI coach off. |
 
 These values are already filled in and usually don't need changing:
 
 | Setting | Value | Purpose |
 | --- | --- | --- |
 | `APP_DB_PATH` | `/var/data/progress.sqlite3` | Keeps progress on the persistent disk. |
-| `OPENAI_MODEL` | `gpt-4o-mini` | The model the coach uses. |
-| `OPENAI_BASE_URL` | `https://api.openai.com/v1` | Change it for another OpenAI-compatible provider. |
+| `ANTHROPIC_MODEL` | `claude-opus-5-5` | The Claude model the coach uses. |
+
+The coach can also use any OpenAI-compatible provider instead: leave `ANTHROPIC_API_KEY` empty and add `OPENAI_API_KEY` (plus `OPENAI_MODEL` and `OPENAI_BASE_URL` if needed) under **Environment**.
 
 Click **Apply** (or **Deploy Blueprint**). Render now builds the Docker image and starts the service. The first build takes a few minutes; you can follow it in the **Logs** tab.
 
@@ -91,8 +92,8 @@ Before pushing, it's worth running the checks locally (see [Verify the projects]
 In the Render dashboard, open the **build-and-learn** service → **Environment**. Edit a value, then save and deploy. For example, you can:
 
 - Change the site password: edit `APP_PASSWORD`.
-- Turn the AI coach on or off: set or clear `OPENAI_API_KEY`.
-- Use a different provider: edit `OPENAI_BASE_URL` and `OPENAI_MODEL`.
+- Turn the AI coach on or off: set or clear `ANTHROPIC_API_KEY`.
+- Use a different Claude model: edit `ANTHROPIC_MODEL`.
 
 Never put real keys or passwords in the code or in a committed file. `api/.env` is ignored by git for this reason, and this repository is public.
 
@@ -144,6 +145,7 @@ docker run --rm -p 8000:8000 -e APP_PASSWORD=try-it-locally build-and-learn
 | The password prompt keeps coming back | Check the password for typos or extra spaces. After changing `APP_PASSWORD`, wait for the redeploy to finish, then close the browser and sign in again. |
 | The site opens without a password | `APP_PASSWORD` is empty. Set it under **Environment** and redeploy. |
 | Progress disappears after a deploy | The service has no disk, or `APP_DB_PATH` doesn't point to `/var/data`. Check the **Disks** and **Environment** pages. |
-| The coach says "AI chat is not configured" | `OPENAI_API_KEY` is empty. Set it under **Environment** and redeploy. |
-| The coach says the provider rejected the request | Check that the key is valid, the account has credit, and `OPENAI_MODEL` names a model your provider offers. |
+| The coach says "AI chat is not configured" | `ANTHROPIC_API_KEY` is empty. Set it under **Environment** and redeploy. |
+| The coach says the account has no API credits | Add credits under **Plans & Billing** in the Claude Console. No redeploy is needed. |
+| The coach says Claude rejected the API key | The key is wrong, was revoked or has expired. Create a new one in the Claude Console and update `ANTHROPIC_API_KEY`. |
 | Deploys fail the health check | Check the logs for a startup error. The app must answer `/api/health` on the port Render provides; the Dockerfile already uses `$PORT`. |
