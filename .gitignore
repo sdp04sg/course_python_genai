@@ -1,0 +1,11 @@
+# Dependencies and build output
+node_modules/
+web/dist/
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Secrets and local data: never commit these
+.env
+api/data/
+*.sqlite3

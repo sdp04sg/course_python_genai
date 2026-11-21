@@ -1,0 +1,25 @@
+# Render Blueprint: one Docker web service that runs the API and serves the web app.
+# Render asks for the values marked "sync: false" when you create the service.
+services:
+  - type: web
+    name: build-and-learn
+    runtime: docker
+    # Persistent disks need a paid instance type. On the free type, remove the
+    # "plan" and "disk" blocks and APP_DB_PATH; progress then resets on every deploy.
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: progress-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: APP_PASSWORD
+        sync: false
+      - key: APP_DB_PATH
+        value: /var/data/progress.sqlite3
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: OPENAI_BASE_URL
+        value: https://api.openai.com/v1
