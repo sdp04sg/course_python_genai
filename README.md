@@ -73,26 +73,13 @@ npm run build
 
 ## Deploy to Render
 
-The site is built for one learner: progress is shared, so protect it with a password. In production, one Docker service builds the web app and runs FastAPI, which serves the app and the API from the same URL.
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sdp04sg/course_python_genai)
 
-1. Push this folder to a GitHub repository. `.env` and `api/data/` are ignored, so your key and local progress stay on your computer.
-2. In the Render dashboard, choose **New > Blueprint** and select the repository. Render reads `render.yaml`.
-3. When asked, set:
-   - `APP_PASSWORD`: a long password. When the site opens, the browser asks for it; any username works.
-   - `OPENAI_API_KEY`: your provider key, or leave it empty to keep the coach off.
-4. Apply the Blueprint. When the deploy finishes, open the `onrender.com` URL Render shows.
+The site runs as one Docker service on Render: FastAPI serves the web app and the API from the same URL, and progress is saved on a persistent disk. Because progress is shared, the whole site is protected by a password (`APP_PASSWORD`).
 
-Progress is saved on a 1 GB persistent disk at `/var/data`. Render only offers disks on paid instance types, so `render.yaml` uses the `starter` plan. To run on the free type, remove the `plan` and `disk` blocks and the `APP_DB_PATH` setting; progress then resets on every deploy and restart.
+In short: create a Blueprint from this repository in Render, set `APP_PASSWORD` (and optionally `OPENAI_API_KEY`), and open the URL Render gives you. Every push to `main` redeploys the site.
 
-Every push to the repository's default branch redeploys the site. To use your own domain, add it under the service's **Settings > Custom Domains** and create the DNS record Render shows.
-
-Settings used in production:
-
-| Variable | Purpose |
-| --- | --- |
-| `APP_PASSWORD` | Password for the whole site, except `/api/health` (used by Render's health check). Empty means no password. |
-| `APP_DB_PATH` | Where the SQLite progress database is stored. |
-| `OPENAI_API_KEY`, `OPENAI_MODEL`, `OPENAI_BASE_URL` | AI coach provider settings, as for local use. |
+See **[DEPLOYMENT.md](DEPLOYMENT.md)** for the full step-by-step guide, including cost, custom domains, the free-plan option, and troubleshooting.
 
 ## API endpoints
 
