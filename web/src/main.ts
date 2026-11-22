@@ -362,7 +362,7 @@ const renderWelcome = (): string => {
       <div class="welcome-copy">
         <p class="eyebrow">LEARN BY BUILDING</p>
         <h1>Small steps.<br><span>Real projects.</span></h1>
-        <p class="welcome-text">A practical path from your first Python script to algorithms, containers, and AI-powered apps. Learn one concept, then put it to work.</p>
+        <p class="welcome-text">A practical path from your first Python script to algorithms, backends, databases, system design, and AI-powered apps. Learn one concept, then put it to work.</p>
         <button class="primary-button" id="continue-learning">Continue learning <span aria-hidden="true">→</span></button>
       </div>
       <div class="progress-card">

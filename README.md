@@ -1,10 +1,10 @@
 # Build & Learn
 
-A standalone, step-by-step learning app for Python (beginner to advanced), data structures and algorithms, FastAPI, PostgreSQL, TypeScript, Docker, generative AI, and MCP agents, with interview preparation for every topic. The course tracker and optional AI tutor use a FastAPI backend; lesson completion is saved in a local SQLite database.
+A standalone, step-by-step learning app for Python (beginner to advanced), data structures and algorithms, FastAPI, server-side fundamentals, PostgreSQL, MongoDB, TypeScript, Docker, system design, generative AI, and MCP agents, with interview preparation for every topic. The course tracker and optional AI tutor use a FastAPI backend; lesson completion is saved in a local SQLite database.
 
 ## What is included
 
-- Nine practical courses with 95 short lessons, from beginner to advanced, and a build-it-yourself exercise in each lesson:
+- Twelve practical courses with 125 short lessons, from beginner to advanced, and a build-it-yourself exercise in each lesson:
 
   | # | Course | Level | Lessons |
   | --- | --- | --- | --- |
@@ -12,13 +12,16 @@ A standalone, step-by-step learning app for Python (beginner to advanced), data 
   | 2 | Data Structures and Algorithms with Python | Beginner to advanced | 17 |
   | 3 | Advanced Python | Advanced | 12 |
   | 4 | FastAPI in Practice | Beginner to intermediate | 8 |
-  | 5 | PostgreSQL and SQL | Beginner to advanced | 14 |
-  | 6 | TypeScript for Applications | Beginner | 8 |
-  | 7 | Docker for Developers | Beginner to advanced | 12 |
-  | 8 | Generative AI with Python | Intermediate | 8 |
-  | 9 | Agents and MCP | Intermediate | 8 |
+  | 5 | Server-Side Fundamentals (HTTP, REST, auth, security, concurrency, observability) | Intermediate | 8 |
+  | 6 | PostgreSQL and SQL | Beginner to advanced | 14 |
+  | 7 | MongoDB and NoSQL | Beginner to advanced | 9 |
+  | 8 | TypeScript for Applications | Beginner | 8 |
+  | 9 | Docker for Developers | Beginner to advanced | 12 |
+  | 10 | System Design (scaling, caching, sharding, queues, reliability, case studies) | Intermediate to advanced | 13 |
+  | 11 | Generative AI with Python | Intermediate | 8 |
+  | 12 | Agents and MCP | Intermediate | 8 |
 
-- Interview preparation: two interview questions per lesson (190 in total), each with a model answer and an "In practice" note on where the idea is used in real systems. Each course also has an **Interview prep** page that collects all of its questions for revision.
+- Interview preparation: 280 interview questions, each with a model answer and an "In practice" note on where the idea is used in real systems. Every lesson has at least two; the server-side, MongoDB and system design lessons have three each. Each course also has an **Interview prep** page that collects all of its questions for revision.
 
 - A persistent progress tracker, with course and overall completion percentages.
 - A TypeScript/Vite web app that talks to the FastAPI service.

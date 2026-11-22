@@ -392,6 +392,77 @@ COURSES = [
         ],
     },
     {
+        "id": "backend",
+        "title": "Server-Side Fundamentals",
+        "subtitle": "How HTTP, APIs, authentication, security and production servers work.",
+        "level": "Intermediate",
+        "modules": [
+            {
+                "title": "HTTP and APIs",
+                "lessons": [
+                    {
+                        "id": "be-http",
+                        "title": "How HTTP works: requests, responses and status codes",
+                        "practice": "Send requests to this app's API from Python, print the status codes and headers, and explain each status-code class.",
+                        "minutes": 35,
+                    },
+                    {
+                        "id": "be-rest",
+                        "title": "Design clean REST APIs",
+                        "practice": "Design versioned, paginated endpoints for a library API with one consistent error format.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "be-browser-rules",
+                        "title": "CORS, cookies and HTTP caching",
+                        "practice": "Allow your frontend's origin with CORS and add an ETag so repeat requests get 304 Not Modified.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Authentication and security",
+                "lessons": [
+                    {
+                        "id": "be-auth",
+                        "title": "Authentication: passwords, sessions and tokens",
+                        "practice": "Hash and verify passwords with scrypt, then issue and verify a signed token that expires.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "be-authz",
+                        "title": "Authorization, roles and OAuth 2.0",
+                        "practice": "Let only admins delete orders, and let customers read only their own orders.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "be-security",
+                        "title": "Web security essentials: injection, XSS, CSRF and SSRF",
+                        "practice": "Find and fix an SQL injection, an XSS bug and an SSRF bug in a small app.",
+                        "minutes": 50,
+                    },
+                ],
+            },
+            {
+                "title": "Servers in production",
+                "lessons": [
+                    {
+                        "id": "be-concurrency",
+                        "title": "Concurrency: processes, threads, async and the GIL",
+                        "practice": "Time sequential and concurrent I/O with asyncio, then move a blocking call off the event loop.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "be-observability",
+                        "title": "Logging, metrics, tracing and health checks",
+                        "practice": "Add middleware that logs each request as JSON with a request ID, status and duration.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+        ],
+    },
+    {
         "id": "postgres",
         "title": "PostgreSQL and SQL",
         "subtitle": "Store, query and protect data with the leading open-source database.",
@@ -508,6 +579,83 @@ COURSES = [
                         "title": "Run PostgreSQL in production: roles, backups and migrations",
                         "practice": "Create a least-privilege app role, back up with pg_dump, restore into a new database and write a migration.",
                         "minutes": 50,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "mongodb",
+        "title": "MongoDB and NoSQL",
+        "subtitle": "Model, query and scale document data with MongoDB and Python.",
+        "level": "Beginner to advanced",
+        "modules": [
+            {
+                "title": "Getting started",
+                "lessons": [
+                    {
+                        "id": "mongo-intro",
+                        "title": "Documents, collections and running MongoDB",
+                        "practice": "Start MongoDB in Docker, connect with mongosh and insert your first document.",
+                        "minutes": 30,
+                    },
+                    {
+                        "id": "mongo-crud",
+                        "title": "Create, read, update and delete documents",
+                        "practice": "Insert students, find them with filters, update them with $set and $inc, then delete one.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "mongo-queries",
+                        "title": "Query operators, arrays and embedded documents",
+                        "practice": "Query courses by nested fields and array contents, with sorting and projection.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Modelling and performance",
+                "lessons": [
+                    {
+                        "id": "mongo-modeling",
+                        "title": "Model data: embed or reference",
+                        "practice": "Design a blog schema (authors, posts, comments) and justify each embed-or-reference choice.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "mongo-indexes",
+                        "title": "Speed up queries with indexes and explain()",
+                        "practice": "Index a slow query and compare the explain() output before and after.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "mongo-aggregation",
+                        "title": "Analyze data with the aggregation pipeline",
+                        "practice": "Compute each course's average score and its top three students with one pipeline.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+            {
+                "title": "Applications and scale",
+                "lessons": [
+                    {
+                        "id": "mongo-python",
+                        "title": "Use MongoDB from Python with PyMongo",
+                        "practice": "Write a StudentRepository class with create, get-by-id and search methods.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "mongo-transactions",
+                        "title": "Transactions, write concern and consistency",
+                        "practice": "Move credits between two accounts atomically with a multi-document transaction.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "mongo-scale",
+                        "title": "Replica sets, sharding and production",
+                        "practice": "Choose a shard key for an orders collection and explain the trade-offs.",
+                        "minutes": 45,
                     },
                 ],
             },
@@ -689,6 +837,117 @@ COURSES = [
                         "title": "Build in CI, push to a registry, and deploy",
                         "practice": "Build and push your image to GitHub Container Registry with GitHub Actions, then deploy it to a container host.",
                         "minutes": 60,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "system-design",
+        "title": "System Design",
+        "subtitle": "Design scalable, reliable systems and explain the trade-offs.",
+        "level": "Intermediate to advanced",
+        "modules": [
+            {
+                "title": "Foundations",
+                "lessons": [
+                    {
+                        "id": "sd-approach",
+                        "title": "Approach a system design problem",
+                        "practice": "Write the requirements and a one-page high-level design for a pastebin service.",
+                        "minutes": 35,
+                    },
+                    {
+                        "id": "sd-estimation",
+                        "title": "Back-of-the-envelope estimates",
+                        "practice": "Estimate requests per second, five-year storage and bandwidth for a photo-sharing app.",
+                        "minutes": 35,
+                    },
+                ],
+            },
+            {
+                "title": "Scaling the request path",
+                "lessons": [
+                    {
+                        "id": "sd-load-balancing",
+                        "title": "Scale out with load balancers",
+                        "practice": "Simulate several balancing algorithms and compare their waiting times.",
+                        "minutes": 40,
+                    },
+                    {
+                        "id": "sd-caching",
+                        "title": "Caching, eviction and CDNs",
+                        "practice": "Implement an LRU cache with expiry and use it in a cache-aside lookup.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "sd-rate-limiting",
+                        "title": "Rate limiting and API gateways",
+                        "practice": "Implement a token bucket and a sliding-window limiter and test them with a fake clock.",
+                        "minutes": 40,
+                    },
+                ],
+            },
+            {
+                "title": "Data at scale",
+                "lessons": [
+                    {
+                        "id": "sd-databases",
+                        "title": "Replication, consistency and the CAP theorem",
+                        "practice": "Route reads to replicas while keeping read-your-writes for users who just wrote.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "sd-sharding",
+                        "title": "Partitioning and consistent hashing",
+                        "practice": "Build a hash ring with virtual nodes and measure how many keys move when a node is added.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+            {
+                "title": "Asynchronous and reliable systems",
+                "lessons": [
+                    {
+                        "id": "sd-queues",
+                        "title": "Message queues, events and idempotent consumers",
+                        "practice": "Build a worker that applies each order once, even when messages are delivered twice.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "sd-reliability",
+                        "title": "Timeouts, retries, circuit breakers and SLOs",
+                        "practice": "Wrap a flaky dependency with retries, exponential backoff with jitter and a circuit breaker.",
+                        "minutes": 45,
+                    },
+                    {
+                        "id": "sd-microservices",
+                        "title": "Monoliths, microservices and sagas",
+                        "practice": "Model an order saga (stock, payment, shipping) with compensating actions.",
+                        "minutes": 45,
+                    },
+                ],
+            },
+            {
+                "title": "Case studies",
+                "lessons": [
+                    {
+                        "id": "sd-url-shortener",
+                        "title": "Design a URL shortener",
+                        "practice": "Design a URL shortener and code its core: base62 codes, storage and a cache.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "sd-news-feed",
+                        "title": "Design a news feed",
+                        "practice": "Build a hybrid feed: fan-out on write for most accounts, fan-out on read for celebrities.",
+                        "minutes": 50,
+                    },
+                    {
+                        "id": "sd-chat",
+                        "title": "Design a chat system",
+                        "practice": "Build an in-memory chat core with rooms, ordered message IDs and offline catch-up.",
+                        "minutes": 50,
                     },
                 ],
             },

@@ -125,9 +125,12 @@ def test_courses_and_progress_are_available_and_persisted(tmp_path):
             "dsa",
             "python-advanced",
             "fastapi",
+            "backend",
             "postgres",
+            "mongodb",
             "typescript",
             "docker",
+            "system-design",
             "genai",
             "agents-mcp",
         ]
@@ -154,7 +157,7 @@ def test_curriculum_lessons_are_complete_and_ids_are_unique():
                 assert lesson["minutes"] > 0
                 lesson_ids.append(lesson["id"])
     assert len(lesson_ids) == len(set(lesson_ids))
-    assert len(lesson_ids) == 95
+    assert len(lesson_ids) == 125
 
 
 def test_every_lesson_has_a_tutorial_and_a_valid_quiz():
@@ -196,6 +199,16 @@ def test_course_interview_endpoint_groups_questions_by_lesson(tmp_path):
         assert len(body["lessons"]) == 14
         assert all(len(lesson["questions"]) >= 2 for lesson in body["lessons"])
         assert client.get("/api/courses/not-a-course/interview").status_code == 404
+
+        for course_id, title, lessons in [
+            ("backend", "Server-Side Fundamentals", 8),
+            ("mongodb", "MongoDB and NoSQL", 9),
+            ("system-design", "System Design", 13),
+        ]:
+            body = client.get(f"/api/courses/{course_id}/interview").json()
+            assert body["course_title"] == title
+            assert len(body["lessons"]) == lessons
+            assert all(len(lesson["questions"]) == 3 for lesson in body["lessons"])
 
 
 def test_python_examples_in_lessons_are_valid_python():

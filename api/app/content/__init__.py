@@ -2,6 +2,7 @@
 
 from app.content import (
     agents_mcp,
+    backend,
     docker,
     dsa,
     fastapi_course,
@@ -11,9 +12,13 @@ from app.content import (
     interview_dsa,
     interview_frontend_devops,
     interview_python,
+    interview_server_side,
+    interview_system_design,
+    mongodb,
     postgres,
     python_advanced,
     python_foundations,
+    system_design,
     typescript,
 )
 
@@ -23,16 +28,27 @@ for _course in (
     dsa,
     python_advanced,
     fastapi_course,
+    backend,
     postgres,
+    mongodb,
     typescript,
     docker,
+    system_design,
     genai,
     agents_mcp,
 ):
     LESSON_CONTENT.update(_course.CONTENT)
 
 INTERVIEW_QUESTIONS: dict[str, list[dict]] = {}
-for _group in (interview_python, interview_dsa, interview_backend, interview_frontend_devops, interview_ai):
+for _group in (
+    interview_python,
+    interview_dsa,
+    interview_backend,
+    interview_server_side,
+    interview_frontend_devops,
+    interview_system_design,
+    interview_ai,
+):
     INTERVIEW_QUESTIONS.update(_group.INTERVIEW)
 
 for _lesson_id, _content in LESSON_CONTENT.items():
